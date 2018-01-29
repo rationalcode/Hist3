@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class SelectActivity extends AppCompatActivity {
 
+    static Fragment fragment;
 
-    static Context context;
     boolean start;
     public static Toast toast;
     FragmentManager fm = getFragmentManager();
@@ -26,7 +26,7 @@ public class SelectActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        Fragment fragment = new ButtonFragment();
+        fragment = new ButtonFragment();
         fragmentTransaction.add(R.id.first_fragment, fragment,"startfragment");
 
         fragmentTransaction.commit();

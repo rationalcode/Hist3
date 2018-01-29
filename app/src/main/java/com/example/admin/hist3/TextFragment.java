@@ -11,12 +11,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static android.widget.Toast.makeText;
-import static com.example.admin.hist3.SelectActivity.context;
+import static com.example.admin.hist3.SelectActivity.fragment;
 import static com.example.admin.hist3.SelectActivity.toast;
 
 /**
@@ -37,7 +34,7 @@ public class TextFragment extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.text_layout, container, false);
 
-        TextView textView = (TextView) view.findViewById(R.id.textView);
+        TextView textView = view.findViewById(R.id.textView);
         textView.setText("Click DialogMenu Item #: "+Integer.toString(currentItem));
 
 
@@ -52,7 +49,15 @@ public class TextFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
 
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
 
+        //ft.hide( fm.findFragmentByTag("textfragment"));
+
+
+        ft.replace(R.id.first_fragment, fragment);
+        //ft.show(fm.findFragmentByTag("startfragment"));
+        ft.commit();
 
         //toast.makeText(view.getContext(),"clickFAB",Toast.LENGTH_SHORT).show();
     }
