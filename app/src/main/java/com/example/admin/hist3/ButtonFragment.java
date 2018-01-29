@@ -1,6 +1,7 @@
 package com.example.admin.hist3;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -39,24 +40,16 @@ public class ButtonFragment extends Fragment {
 
 
 
-            FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-            ft.replace(R.id.button_fragment, new SelectDialog());
-            ft.addToBackStack(null);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            ft.commit();
-
-
-
 //            FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-//            ft.replace(R.id.first_fragment, new TextFragment());
+//            ft.replace(R.id.button_fragment, new SelectDialog());
 //            ft.addToBackStack(null);
 //            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 //            ft.commit();
 
-
-
-            String clickButton = Integer.toString(view.getId());
-            makeText(getActivity(), clickButton, Toast.LENGTH_SHORT).show();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
+            SelectDialog dialog = new SelectDialog();
+            dialog.show(fm, "dialog");
         }
     };
         View button = view.findViewById(R.id.button);
@@ -65,9 +58,6 @@ public class ButtonFragment extends Fragment {
         button.setOnClickListener(onClickListener);
         button2.setOnClickListener(onClickListener);
         button3.setOnClickListener(onClickListener);
-
-
-
 
             return view;
 
