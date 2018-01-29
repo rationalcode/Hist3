@@ -23,7 +23,7 @@ import static com.example.admin.hist3.SelectActivity.toast;
 public class TextFragment extends Fragment implements View.OnClickListener {
 
 
-    static TextView textView;
+    TextView textView;
     public static int currentItem;
     Toast toast;
 
