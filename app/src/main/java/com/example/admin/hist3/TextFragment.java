@@ -16,16 +16,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.widget.Toast.makeText;
+import static com.example.admin.hist3.SelectActivity.context;
+import static com.example.admin.hist3.SelectActivity.toast;
 
 /**
  * Created by Admin on 27.01.2018.
  */
 
-public class TextFragment extends Fragment  {
+public class TextFragment extends Fragment implements View.OnClickListener {
 
 
     static TextView textView;
     public static int currentItem;
+    Toast toast;
 
     @Nullable
     @Override
@@ -38,9 +41,20 @@ public class TextFragment extends Fragment  {
         textView.setText("Click DialogMenu Item #: "+Integer.toString(currentItem));
 
 
+        FloatingActionButton fab = view.findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(this);
+
         return view;
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+
+
+
+        //toast.makeText(view.getContext(),"clickFAB",Toast.LENGTH_SHORT).show();
+    }
 }
 
