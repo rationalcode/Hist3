@@ -9,11 +9,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import static android.widget.Toast.makeText;
-import static com.example.admin.hist3.TextFragment.textView;
 
 /**
  * Created by Admin on 26.01.2018.
@@ -38,14 +34,6 @@ public class ButtonFragment extends Fragment {
         public void onClick(View view) {
 
 
-
-
-//            FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-//            ft.replace(R.id.button_fragment, new SelectDialog());
-//            ft.addToBackStack(null);
-//            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-//            ft.commit();
-
             FragmentManager fm = getFragmentManager();
             FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
             SelectDialog dialog = new SelectDialog();
@@ -61,5 +49,15 @@ public class ButtonFragment extends Fragment {
 
             return view;
 
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }
