@@ -59,7 +59,13 @@ public class TextFragment extends Fragment implements View.OnClickListener {
         //ft.show(fm.findFragmentByTag("startfragment"));
         ft.commit();
 
-        //toast.makeText(view.getContext(),"clickFAB",Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+    }
+
 }
 
