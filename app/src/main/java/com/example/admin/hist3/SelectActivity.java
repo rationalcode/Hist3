@@ -3,6 +3,7 @@ package com.example.admin.hist3;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.arch.persistence.room.*;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +42,13 @@ public class SelectActivity extends AppCompatActivity {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
         Log.d(LOG_TAG, "fragment"+fragment.hashCode());
         }
+
+
+
+//
+//                DatabaseChapter db = Room.databaseBuilder(getApplicationContext(),
+//                DatabaseChapter.class, "chapter-database").build();
+
 
     }
 

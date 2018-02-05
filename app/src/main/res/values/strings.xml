@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Hist3</string>
-    <string name="button">Button</string>
+
     <string name="textview">TextView</string>
+    <string name="button">Содержание</string>
+    <string name="button2">тесты</string>
+    <string name="button3">словарь</string>
+    <string name="add">add</string>
 </resources>

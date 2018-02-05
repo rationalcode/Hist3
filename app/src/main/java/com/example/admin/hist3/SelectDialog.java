@@ -35,12 +35,17 @@ public class SelectDialog extends DialogFragment {
         DialogInterface.OnClickListener myClickListener = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
 
+                if (which==-2){
 
+                    dialog.dismiss();
+
+                } else {
                 TextFragment.currentItem =which;
 
 
                 dialog.dismiss();
                 onClickItem(which);
+                }
             }
         };
 
@@ -57,6 +62,8 @@ public class SelectDialog extends DialogFragment {
     }
 
     public void onClickItem (int which){
+
+
 
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

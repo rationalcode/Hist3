@@ -3,7 +3,6 @@ package com.example.admin.hist3;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -33,11 +32,26 @@ public class ButtonFragment extends Fragment {
         @Override
         public void onClick(View view) {
 
-
             FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = getActivity().getFragmentManager().beginTransaction();
-            SelectDialog dialog = new SelectDialog();
-            dialog.show(fm, "dialog");
+            FragmentTransaction ft;
+
+
+            switch (view.getId()){
+
+                case R.id.button:
+                    ft = getActivity().getFragmentManager().beginTransaction();
+                    SelectDialog dialog = new SelectDialog();
+                    dialog.show(fm, "dialog");
+                    break;
+
+                case R.id.button2:
+                    ft = getActivity().getFragmentManager().beginTransaction();
+                    DatabaseQueries dq = new DatabaseQueries();
+                    ft.replace(R.id.first_fragment, dq,"query");
+                    ft.commit();
+                    break;
+            }
+
         }
     };
         View button = view.findViewById(R.id.button);
